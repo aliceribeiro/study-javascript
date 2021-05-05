@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./styles/index.css">
+  
+  <title>Aparecida Nutrição</title>
+</head>
+<body>
+  <header id="cabecalho">
+    <div class="container">
+      <h1>Aparecida Nutrição</h1>
+    </div>
+  </header>
+
+  <main id="pacientes">
+    <section id="meus-pacientes" class="container">
+      <h2>Meus pacientes</h2>
+
+      <label for="filtrar-tabela">Buscar:</label>
+      <input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do paciente">
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Peso (kg)</th>
+            <th>Altura (m)</th>
+            <th>Gordura corporal (%)</th>
+            <th>IMC</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-pacientes">
+          <tr class="paciente">
+            <td class="info-nome">Paulo</td>
+            <td class="info-peso">100</td>
+            <td class="info-altura">2.00</td>
+            <td class="info-gordura">10</td>
+            <td class="info-imc">0</td>
+          </tr>
+          <tr class="paciente">
+            <td class="info-nome">João</td>
+            <td class="info-peso">80</td>
+            <td class="info-altura">1.72</td>
+            <td class="info-gordura">20</td>
+            <td class="info-imc">0</td>
+          </tr>
+        </tbody>
+      </table>
+			<span id="erro-ajax" class="invisivel">Erro ao buscar os pacientes</span>
+      <button id="buscar-pacientes" class="btn">Buscar pacientes</button>
+    </section>
+
+    <section id="adicionar-paciente" class="container">
+      <h2>Adicionar novo paciente</h2>
+      <ul id="mensagens-erro"></ul>
+
+      <form id="form-adiciona">
+        <div class="adicionar-paciente_input">
+          <label for="nome">Nome:</label>
+          <input type="text" name="nome" placeholder="Digite o nome do seu paciente">
+        </div>
+        <div class="adicionar-paciente_input">
+          <label for="peso">Peso:</label>
+          <input type="number" name="peso" placeholder="Digite o peso do seu paciente">
+        </div>
+        <div class="adicionar-paciente_input">
+          <label for="altura">Altura:</label>
+          <input type="number" name="altura" placeholder="Digite a altura do seu paciente">
+        </div>
+        <div class="adicionar-paciente_input">
+          <label for="gordura">% de gordura:</label>
+          <input type="number" name="gordura" placeholder="Digite a altura do seu paciente">
+        </div>
+      </form>
+      <button id="btn-adicionar" class="btn">Adicionar</button>
+    </section>
+  </main>
+
+  <script src="scripts/calcula-imc.js"></script>
+  <script src="scripts/remove-paciente.js"></script>
+  <script src="scripts/adiciona-paciente.js"></script>
+  <script src="scripts/busca-paciente-api.js"></script>
+  <script src="scripts/filtra-pacientes.js"></script>
+</body>
+</html>
